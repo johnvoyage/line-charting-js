@@ -62,9 +62,20 @@ const createChart = (chartName, xAxisLabel, yAxisLabel, sampleX, sampleY) => {
       pointHoverBorderColor: ,
       pointHoverBorderWidth: ,
       pointHoverRadius: ,
-      showLine: ,
-      spanGaps: ,
+      showLine: false,
+      // "If false, the lines between points are not drawn."
+      // Type: Boolean
+      // Default: true
+      spanGaps: true,
+      // "If false, NaN data causes a break in the line."
+      // Type: Boolean
+      // Default: false
+
       steppedLine:
+      // Options:
+      //   false: no step interpolation (default)
+      //   true or before: step-before interpolation
+      //   after: step-after interpolation
     }],
   },
   options: {
