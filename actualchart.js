@@ -49,8 +49,22 @@ const createChart = (chartName, xAxisLabel, yAxisLabel, sampleX, sampleY) => {
       // Whether or not there should be filled (backgroundColor) between x-axis and the line
       // Type
       // Default: true
-      lineTension:
+      lineTension: 0,
       // Type: Number
+      // "Bezier curve tension of the line. Set to 0 to draw straightlines. This option is ignored if monotone cubic interpolation is used."
+      pointBackgroundColor: 'green',
+      pointBorderColor: ,
+      pointBorderWidth: ,
+      pointRadius: ,
+      pointStyle: ,
+      pointHitRadius: ,
+      pointHoverBackgroundColor: ,
+      pointHoverBorderColor: ,
+      pointHoverBorderWidth: ,
+      pointHoverRadius: ,
+      showLine: ,
+      spanGaps: ,
+      steppedLine:
     }],
   },
   options: {
