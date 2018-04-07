@@ -14,10 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Submit the create chart form
   $('#create-chart-form').submit((event) => {
+    event.preventDefault()
     chartName = event.target.children[0].value
     xAxisLabel = event.target.children[1].value
     yAxisLabel = event.target.children[2].value
-    createChart(chartName, xAxisLabel, yAxisLabel)
+    createChart(chartName, xAxisLabel, yAxisLabel, sampleX, sampleY)
     createAddDataForm()
     $('#create-chart-form').remove()
   })
