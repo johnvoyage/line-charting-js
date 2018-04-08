@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //   yAxisLabel = event.target.children[2].value
     createChart()
     createGauge()
+    // createGauge()
+
 
     // createAddDataForm()
   //   $('#create-chart-form').remove()
