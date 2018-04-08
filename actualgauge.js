@@ -55,6 +55,7 @@ const createGauge = () => {
 // }
 
 const randomOptions = () => {
+  const pointerLength = Math.random()
   return {
     angle: -0.5 + Math.random(), // The span of the gauge arc
     // From -0.5 (full circle) to 0.5 (invisible sliver). 0 is a perfect half-circle
@@ -63,9 +64,9 @@ const randomOptions = () => {
     radiusScale: (Math.random() / 2 + 0.5),
     // Relative radius (0.5 to 1)
     pointer: {
-      length: Math.random(), // // Relative to gauge radius (0 to 1)
+      length: pointerLength, // // Relative to gauge radius (0 to 1)
       strokeWidth: 0.05, // Point thickness (0 to 0.3)
-      color: getRandomColor() // Pointer color
+      color: pointerLength < 0.2 ? 'white' : getRandomColor() // Pointer color
     },
     limitMax: false, // If false, max value increases automatically if value > maxValue
     limitMin: false, // If true, the min value of the gauge will be fixed
