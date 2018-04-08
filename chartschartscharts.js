@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const sampleX = ['Week1','Week2', 'Week3', 'Week4', 'Week5']
-  const sampleY = [100, 105, 99, 92, 101]
-  const chartName = "Chart Name!"
-  const xAxisLabel = "X Axis Label"
-  const yAxisLabel = "Y Axis Label"
+  // const sampleX = ['Week1','Week2', 'Week3', 'Week4', 'Week5']
+  // const sampleY = [100, 105, 99, 92, 101]
+  // const chartName = "Chart Name!"
+  // const xAxisLabel = "X Axis Label"
+  // const yAxisLabel = "Y Axis Label"
   // Create the create chart form
   // let createChartForm = $('<form id="create-chart-form"><form/>')
   // createChartForm.append(`
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //   chartName = event.target.children[0].value
   //   xAxisLabel = event.target.children[1].value
   //   yAxisLabel = event.target.children[2].value
-    createChart(chartName, xAxisLabel, yAxisLabel, sampleX, sampleY)
+    createChart()
     createGauge()
 
     // createAddDataForm()
