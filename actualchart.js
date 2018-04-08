@@ -1,82 +1,86 @@
 const createChart = (chartName, xAxisLabel, yAxisLabel, sampleX, sampleY) => {
-  console.log('here')
   myChart = document.getElementById('my-chart').getContext('2d');
   lineChart = new Chart(myChart, {
   type: 'line',
   data: {
     // X axis label(s) or blank array
-    labels: sampleX,
-    datasets: [{
-      // http://www.chartjs.org/docs/latest/charts/line.html
-      data: sampleY,
-      ////
-      label: chartName,
-      // Type: String
-      // The label for the dataset which appears in the legend and tooltips.
-      xAxisID: 'xAxisID',
-      // Type: String
-      // Default: ''
-      // The ID of the x axis to plot this dataset on. If not specified, this defaults to the ID of the first found x axis
-      yAxisID: 'yAxisID',
-      // Type: String
-      // Default: ''
-      // The ID of the y axis to plot this dataset on. If not specified, this defaults to the ID of the first found y axis.
-      backgroundColor: 'red',
-      // Type: Color as string
-      // Default:
-      // The fill color under the line.
+    // labels: sampleX,
+    datasets:
+    [
+      {
+        // http://www.chartjs.org/docs/latest/charts/line.html
+        data: googleJS,
+        ////
+        label: 'JavaScript Search',
+        // Type: String
+        // The label for the dataset which appears in the legend and tooltips.
+        // xAxisID: sampleY,
+        // // Type: String
+        // // Default: ''
+        // // The ID of the x axis to plot this dataset on. If not specified, this defaults to the ID of the first found x axis
+        // yAxisID: 'yAxisID',
+        // // Type: String
+        // // Default: ''
+        // // The ID of the y axis to plot this dataset on. If not specified, this defaults to the ID of the first found y axis.
+        // backgroundColor: 'red',
+        // // Type: Color as string
+        // // Default:
+        // // The fill color under the line.
+        //
+        // borderColor: 'red',
+        // Type: Color as string
+        // Default:
+        // The color of the line.
+        // borderWidth: 2,
+        // borderDash: 5,
+        // borderDashOffset: 5,
+        // borderCapStyle: 'square',
+        // Type: String
+        // Options: 'butt', 'round', 'square'
+        // See: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap
+        // borderJoinStyle: 'bevel',
+        // Type: String
+        // Option:
+        // See: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin
+        // cubicInterpolationMode: 'monotone',
+        // Algorithm used to interpolate a smooth curve from the discrete data points.
+        // Options: 'default', 'monotone'
 
-      borderColor: 'red',
-      // Type: Color as string
-      // Default:
-      // The color of the line.
-      borderWidth: 2,
-      borderDash: 5,
-      borderDashOffset: 5,
-      borderCapStyle: 'square',
-      // Type: String
-      // Options: 'butt', 'round', 'square'
-      // See: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap
-      borderJoinStyle: 'bevel',
-      // Type: String
-      // Option:
-      // See: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin
-      cubicInterpolationMode: 'monotone',
-      // Algorithm used to interpolate a smooth curve from the discrete data points.
-      // Options: 'default', 'monotone'
+        // fill: false,
+        // Whether or not there should be filled (backgroundColor) between x-axis and the line
+        // Type
+        // Default: true
+        // lineTension: 0,
+        // Type: Number
+        // "Bezier curve tension of the line. Set to 0 to draw straightlines. This option is ignored if monotone cubic interpolation is used."
+        // pointBackgroundColor: 'green',
+        // pointBorderColor: 'blue',
+        // pointBorderWidth: 5,
+        // pointRadius: 10,
+        // pointStyle: 'triangle',
+        // Options: http://www.chartjs.org/docs/latest/configuration/elements#point-styles
+        // If it's an image: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
+        // pointHitRadius: 3,
+        // pointHoverBackgroundColor: 'purple',
+        // pointHoverBorderColor: 'grey',
+        // pointHoverBorderWidth: 7,
+        // pointHoverRadius: 6,
+        // showLine: false,
+        // "If false, the lines between points are not drawn."
+        // Type: Boolean
+        // Default: true
+        // spanGaps: true,
+        // "If false, NaN data causes a break in the line."
+        // Type: Boolean
+        // Default: false
 
-      fill: false,
-      // Whether or not there should be filled (backgroundColor) between x-axis and the line
-      // Type
-      // Default: true
-      lineTension: 0,
-      // Type: Number
-      // "Bezier curve tension of the line. Set to 0 to draw straightlines. This option is ignored if monotone cubic interpolation is used."
-      pointBackgroundColor: 'green',
-      pointBorderColor: ,
-      pointBorderWidth: ,
-      pointRadius: ,
-      pointStyle: ,
-      pointHitRadius: ,
-      pointHoverBackgroundColor: ,
-      pointHoverBorderColor: ,
-      pointHoverBorderWidth: ,
-      pointHoverRadius: ,
-      showLine: false,
-      // "If false, the lines between points are not drawn."
-      // Type: Boolean
-      // Default: true
-      spanGaps: true,
-      // "If false, NaN data causes a break in the line."
-      // Type: Boolean
-      // Default: false
-
-      steppedLine:
-      // Options:
-      //   false: no step interpolation (default)
-      //   true or before: step-before interpolation
-      //   after: step-after interpolation
-    }],
+        // steppedLine: 'after',
+        // Options:
+        //   false: no step interpolation (default)
+        //   true or before: step-before interpolation
+        //   after: step-after interpolation
+      }
+    ],
   },
   options: {
     title: {
@@ -109,35 +113,7 @@ const createChart = (chartName, xAxisLabel, yAxisLabel, sampleX, sampleY) => {
       }
     },
 
-    // color: 'red',
-    // fill: false,
-    // legend: {
-    //   // display: false,
-    // },
-    // scales: {
-    //   xAxes: [{
-    //     // display: false,
-    //
-    //     // ticks: {
-    //     //     beginAtZero: true,
-    //     //     min: -12,
-    //     //     max: -1,
-    //     //     stepSize: 1,
-    //     }
-    //   }],
-    //   yAxes: [{
-    //     ticks: {
-    //       beginAtZero: true,
-    //       fontColor: 'black',
-    //       fontFamily: 'Arial',
-    //       fontSize: 30,
-    //
-    //     },
-    //     position: 'right',
-    //   }]
-    // },
-    // responsive: false,
-    // maintainAspectRatio: false
+
   }
 });
 }
