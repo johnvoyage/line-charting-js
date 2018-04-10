@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+  <title>Top Grossing Movies</title>
+</head>
+<body>
+  <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+  <script>
+
+  Highcharts.setOptions({
+  colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
+      return {
+          radialGradient: {
+              cx: 0.5,
+              cy: 0.3,
+              r: 0.7
+          },
+          stops: [
+              [0, color],
+              [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+          ]
+      };
+  })
+});
+
+// Build the chart
+Highcharts.chart('container', {
+  chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: 'pie'
+  },
+  title: {
+      text: 'Highest Grossing Movies of All Time: Worldwide'
+  },
+  tooltip: {
+      pointFormat: '{series.name}: <b>${point.y:.1f} Million</b>'
+  },
+  plotOptions: {
+      pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+              enabled: true,
+              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+              style: {
+                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+              },
+              connectorColor: 'silver'
+          }
+      }
+  },
+  series: [{
+      name: 'Worldwide Gross',
+      data: [
+          { name: 'Avatar', y: 2788  },
+          { name: 'Titanic', y: 2187.5 },
+          { name: 'Star Wars: The Force Awakens', y: 2068.2 },
+          { name: 'Jurassic World', y: 1671.7 },
+          { name: '	Marvels The Avengers', y: 1518.8 },
+          { name: 'Furious 7', y: 1516.0 }
+      ]
+  }]
+});
+  </script>
+
+
+
+</body>
+</html>
